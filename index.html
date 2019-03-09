@@ -56,6 +56,24 @@ about me
 <br/>
 my photos
 <br/>
+- var max = 18
+- var imgstr = 511
+div#gallery
+  - for(var n=1; n<=max; n++)
+    div
+      img(src= 'https://picsum.photos/600/600/?image='+(imgstr + n))
+      a(href='#lightbox-'+n)= (imgstr + n)
+
+- for(var n=1; n<=max;n++)
+  div.lightbox(id="lightbox-"+n)
+    div.content
+      img(src='https://picsum.photos/1920/1080/?image='+(imgstr+n))
+      .title No. <b>#{imgstr+n}</b> from Picsum
+      a.close(href='#gallery')
+ 
+
+
+  
 <br/>
 <br/>
 </section>
@@ -171,22 +189,13 @@ ans
 contact me <br/>
 <div class="container">  
   <form id="contact" action="" method="post">
-    <h3>Quick Contact</h3>
-    <h4>Contact us today, and get reply with in 24 hours!</h4>
-    <fieldset>
-      <input placeholder="Your name" type="text" tabindex="1" required autofocus>
-    </fieldset>
+    <h3>Contact Me</h3>
+    <h4>Questions? Comments? Want to be a friend?</h4>
     <fieldset>
       <input placeholder="Your Email Address" type="email" tabindex="2" required>
     </fieldset>
     <fieldset>
-      <input placeholder="Your Phone Number" type="tel" tabindex="3" required>
-    </fieldset>
-    <fieldset>
-      <input placeholder="Your Web Site starts with http://" type="url" tabindex="4" required>
-    </fieldset>
-    <fieldset>
-      <textarea placeholder="Type your Message Here...." tabindex="5" required></textarea>
+      <textarea placeholder="Type your Message Here..." tabindex="5" required></textarea>
     </fieldset>
     <fieldset>
       <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
@@ -200,18 +209,5 @@ contact me <br/>
 </section>
 
 
-<script type="text/javascript">
-$(function(){
-  $("#nav a").click(function(e){
-    e.preventDefault();
-    $('html,body').scrollTo(this.hash,this.hash); 
-  });
-});
-</script>
-<script type="text/javascript">
- $(document).scroll(function() {
-    $('#menu').toggle($(this).scrollTop()>1000)
- });​
- </script>
-</body>
-</html>
+
+
