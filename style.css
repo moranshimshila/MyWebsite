@@ -10,6 +10,7 @@
 	padding: 0;
 	overflow: hidden;
 	background-color: pink;
+	
 } 
 
 
@@ -36,10 +37,11 @@
   
   li a {
 	display: block;
-	color:black;
+	color:rgb(64,64,64);
 	text-align: left;
 	padding: 16px;
 	text-decoration: none;
+
 	
   }
   
